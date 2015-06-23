@@ -23,7 +23,7 @@ class CustomViewCell: UITableViewCell {
     func setCellContent(cv: CV) {
         self.nomPrenom.text = cv.nom + " " + cv.prenom
         self.titre.text = "Titre : " + cv.titre
-        self.lastFormation.text = "Dernère formation : " + cv.lastFormation
+        self.lastFormation.text = "Dernière formation : " + cv.lastFormation
         self.experience.text = cv.experience
     }
 }

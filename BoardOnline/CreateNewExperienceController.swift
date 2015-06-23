@@ -9,12 +9,33 @@
 import UIKit
 
 class CreateNewExperienceController: UITableViewController {
-    @IBOutlet var dateBeginTextField: UITextField!
-    @IBAction func dateBeginTextFieldEditing(sender: UITextField) {
+
+    @IBOutlet weak var firstDatePicker: UITextField!
+    @IBOutlet weak var secondDatePicker: UITextField!
+    
+    @IBAction func firstDatePickerEditing(sender: UITextField) {
         var datePickerView = UIDatePicker()
         datePickerView.datePickerMode = UIDatePickerMode.Date
         sender.inputView = datePickerView
-        datePickerView.addTarget(self, action: Selector("datePickerValueChaned:"), forControlEvents: UIControlEvents.ValueChanged)
+        datePickerView.addTarget(self, action: Selector("firstDatePickerValueChanged:"), forControlEvents: UIControlEvents.ValueChanged)
     }
-
+    
+    @IBAction func secondDatePickerEditing(sender: UITextField) {
+        var datePickerView = UIDatePicker()
+        datePickerView.datePickerMode = UIDatePickerMode.Date
+        sender.inputView = datePickerView
+        datePickerView.addTarget(self, action: Selector("secondDatePickerValueChanged:"), forControlEvents: UIControlEvents.ValueChanged)
+    }
+    
+    func firstDatePickerValueChanged(sender: UIDatePicker) {
+        var dateformatter = NSDateFormatter()
+        dateformatter.dateStyle = NSDateFormatterStyle.ShortStyle
+        firstDatePicker.text = dateformatter.stringFromDate(sender.date)
+    }
+    
+    func secondDatePickerValueChanged(sender: UIDatePicker) {
+        var dateformatter = NSDateFormatter()
+        dateformatter.dateStyle = NSDateFormatterStyle.ShortStyle
+        secondDatePicker.text = dateformatter.stringFromDate(sender.date)
+    }
 }

@@ -88,11 +88,12 @@ class CVInfoController: UITableViewController {
         } else if indexPath.section == 1 {
             if indexPath.row < self.cv?.listExperience.count {
                 cell.textLabel?.text = self.cv?.listExperience[indexPath.row].poste
+                cell.detailTextLabel?.text = self.cv!.listExperience[indexPath.row].client + " - " + self.cv!.listExperience[indexPath.row].periode
             }
         } else {
             if indexPath.row < self.cv?.listSkill.count {
                 cell.textLabel?.text = self.cv?.listSkill[indexPath.row].experience
-                cell.detailTextLabel?.text = self.cv!.listSkill[indexPath.row].category + "-" + self.cv!.listSkill[indexPath.row].envTech
+                cell.detailTextLabel?.text = self.cv!.listSkill[indexPath.row].category + " - " + self.cv!.listSkill[indexPath.row].envTech
             }
         }
         

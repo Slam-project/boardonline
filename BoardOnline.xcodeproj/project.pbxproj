@@ -15,12 +15,13 @@
 		ACF3F2AB1B315B4700FC4E01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF3F2AA1B315B4700FC4E01 /* AppDelegate.swift */; };
 		ACF3F2AD1B315B4700FC4E01 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF3F2AC1B315B4700FC4E01 /* FirstViewController.swift */; };
 		ACF3F2AF1B315B4800FC4E01 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF3F2AE1B315B4800FC4E01 /* SecondViewController.swift */; };
-		ACF3F2B21B315B4800FC4E01 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACF3F2B01B315B4800FC4E01 /* Main.storyboard */; };
 		ACF3F2B41B315B4800FC4E01 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACF3F2B31B315B4800FC4E01 /* Images.xcassets */; };
 		ACF3F2B71B315B4800FC4E01 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACF3F2B51B315B4800FC4E01 /* LaunchScreen.xib */; };
 		ACF3F2C31B315B4800FC4E01 /* BoardOnlineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF3F2C21B315B4800FC4E01 /* BoardOnlineTests.swift */; };
 		ACF3F2CD1B315DF900FC4E01 /* CustomViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF3F2CC1B315DF900FC4E01 /* CustomViewCell.swift */; };
 		ACF3F2D01B315FC500FC4E01 /* CV.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF3F2CF1B315FC500FC4E01 /* CV.swift */; };
+		ACFC720A1B39469500A12E8D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACFC72081B39469500A12E8D /* Main.storyboard */; };
+		ACFC720C1B3951F300A12E8D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFC720B1B3951F300A12E8D /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,7 +46,6 @@
 		ACF3F2AA1B315B4700FC4E01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACF3F2AC1B315B4700FC4E01 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		ACF3F2AE1B315B4800FC4E01 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
-		ACF3F2B11B315B4800FC4E01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ACF3F2B31B315B4800FC4E01 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		ACF3F2B61B315B4800FC4E01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		ACF3F2BC1B315B4800FC4E01 /* BoardOnlineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BoardOnlineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -53,6 +53,8 @@
 		ACF3F2C21B315B4800FC4E01 /* BoardOnlineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardOnlineTests.swift; sourceTree = "<group>"; };
 		ACF3F2CC1B315DF900FC4E01 /* CustomViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomViewCell.swift; sourceTree = "<group>"; };
 		ACF3F2CF1B315FC500FC4E01 /* CV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CV.swift; sourceTree = "<group>"; };
+		ACFC72091B39469500A12E8D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		ACFC720B1B3951F300A12E8D /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CBFEC02D0C984C271536827A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -127,8 +129,8 @@
 				ACF3F2D11B3175AE00FC4E01 /* View */,
 				ACF3F2CE1B315FB400FC4E01 /* Model */,
 				ACF3F2AA1B315B4700FC4E01 /* AppDelegate.swift */,
-				ACF3F2B01B315B4800FC4E01 /* Main.storyboard */,
 				ACF3F2B31B315B4800FC4E01 /* Images.xcassets */,
+				ACFC72081B39469500A12E8D /* Main.storyboard */,
 				ACF3F2B51B315B4800FC4E01 /* LaunchScreen.xib */,
 				ACF3F2A81B315B4700FC4E01 /* Supporting Files */,
 			);
@@ -185,6 +187,7 @@
 				ACF3F2AC1B315B4700FC4E01 /* FirstViewController.swift */,
 				ACA816611B32AAD000D44968 /* CVInfoController.swift */,
 				AC07A46A1B344C5E0024C187 /* CreateNewExperienceController.swift */,
+				ACFC720B1B3951F300A12E8D /* LoginViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -272,7 +275,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ACF3F2B21B315B4800FC4E01 /* Main.storyboard in Resources */,
+				ACFC720A1B39469500A12E8D /* Main.storyboard in Resources */,
 				ACF3F2B71B315B4800FC4E01 /* LaunchScreen.xib in Resources */,
 				ACF3F2B41B315B4800FC4E01 /* Images.xcassets in Resources */,
 			);
@@ -348,6 +351,7 @@
 				ACF3F2D01B315FC500FC4E01 /* CV.swift in Sources */,
 				AC1A9A5C1B33FB2900221FB1 /* Skill.swift in Sources */,
 				ACA816621B32AAD000D44968 /* CVInfoController.swift in Sources */,
+				ACFC720C1B3951F300A12E8D /* LoginViewController.swift in Sources */,
 				ACF3F2AD1B315B4700FC4E01 /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -371,20 +375,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		ACF3F2B01B315B4800FC4E01 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				ACF3F2B11B315B4800FC4E01 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		ACF3F2B51B315B4800FC4E01 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				ACF3F2B61B315B4800FC4E01 /* Base */,
 			);
 			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		ACFC72081B39469500A12E8D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ACFC72091B39469500A12E8D /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
