@@ -126,6 +126,9 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="0.0" width="400" height="551"/>
+                                </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="9pv-A4-QxB" id="feI-Eg-o39"/>
                                     <outlet property="delegate" destination="9pv-A4-QxB" id="R66-OY-xKS"/>
@@ -187,7 +190,7 @@
         <!--Mon CV-->
         <scene sceneID="Iix-qu-Ard">
             <objects>
-                <tableViewController id="QIQ-9I-oYH" sceneMemberID="viewController">
+                <tableViewController id="QIQ-9I-oYH" customClass="SecondViewController" customModule="BoardOnline" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="0rB-ey-3as">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -473,6 +476,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Mon CV" id="9xi-Pi-2M1"/>
+                    <connections>
+                        <segue destination="9pv-A4-QxB" kind="presentation" identifier="loginPopin" id="5Up-of-e9X"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yto-gx-XH4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -483,10 +489,11 @@
             <objects>
                 <tableViewController title="Expériences" id="ma3-OV-X1v" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="104" sectionHeaderHeight="22" sectionFooterHeight="22" id="UgY-Ex-kYr">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <view key="tableFooterView" contentMode="scaleToFill" id="Qa6-GH-hc6">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            <rect key="frame" x="0.0" y="190" width="600" height="568"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FNw-1F-6po">
@@ -549,6 +556,7 @@
             <objects>
                 <tableViewController title="Nouvelle expérience" id="o2D-3p-wbk" customClass="CreateNewExperienceController" customModule="BoardOnline" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="ULm-6W-qzM">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <sections>
@@ -574,7 +582,7 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     </variation>
                                                     <connections>
-                                                        <action selector="dateBeginTextFieldEditing:" destination="o2D-3p-wbk" eventType="editingDidBegin" id="C2u-kD-OJr"/>
+                                                        <action selector="firstDatePickerEditing:" destination="o2D-3p-wbk" eventType="editingDidBegin" id="07W-ps-cvx"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
@@ -624,16 +632,31 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z1j-WC-5Lw">
+                                                    <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <action selector="secondDatePickerEditing:" destination="o2D-3p-wbk" eventType="editingDidBegin" id="0cb-5I-Ajy"/>
+                                                    </connections>
+                                                </textField>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="Z1j-WC-5Lw" firstAttribute="top" secondItem="f3S-4C-mgt" secondAttribute="topMargin" constant="-1" id="A61-pn-OHB"/>
                                                 <constraint firstItem="fCl-bI-H84" firstAttribute="top" secondItem="f3S-4C-mgt" secondAttribute="topMargin" constant="3" id="HMK-pU-Uex"/>
                                                 <constraint firstItem="fCl-bI-H84" firstAttribute="leading" secondItem="f3S-4C-mgt" secondAttribute="leadingMargin" constant="7" id="Nwc-qV-Zlj"/>
+                                                <constraint firstItem="Z1j-WC-5Lw" firstAttribute="trailing" secondItem="f3S-4C-mgt" secondAttribute="trailingMargin" id="YmK-Ib-eYL"/>
+                                                <constraint firstItem="Z1j-WC-5Lw" firstAttribute="leading" secondItem="fCl-bI-H84" secondAttribute="trailing" constant="8" id="dve-pB-KB9"/>
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="subviews">
                                                     <exclude reference="fCl-bI-H84"/>
+                                                    <exclude reference="Z1j-WC-5Lw"/>
                                                 </mask>
                                                 <mask key="constraints">
+                                                    <exclude reference="A61-pn-OHB"/>
+                                                    <exclude reference="YmK-Ib-eYL"/>
+                                                    <exclude reference="dve-pB-KB9"/>
                                                     <exclude reference="HMK-pU-Uex"/>
                                                     <exclude reference="Nwc-qV-Zlj"/>
                                                 </mask>
@@ -641,8 +664,12 @@
                                             <variation key="widthClass=compact">
                                                 <mask key="subviews">
                                                     <include reference="fCl-bI-H84"/>
+                                                    <include reference="Z1j-WC-5Lw"/>
                                                 </mask>
                                                 <mask key="constraints">
+                                                    <include reference="A61-pn-OHB"/>
+                                                    <include reference="YmK-Ib-eYL"/>
+                                                    <include reference="dve-pB-KB9"/>
                                                     <include reference="HMK-pU-Uex"/>
                                                     <include reference="Nwc-qV-Zlj"/>
                                                 </mask>
@@ -660,16 +687,28 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mvG-aw-cUf">
+                                                    <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="wGb-sG-xJG" firstAttribute="leading" secondItem="y0f-1z-IVM" secondAttribute="leadingMargin" constant="7" id="Bpb-zx-oTj"/>
                                                 <constraint firstItem="wGb-sG-xJG" firstAttribute="top" secondItem="y0f-1z-IVM" secondAttribute="topMargin" constant="3" id="Wcp-Qk-DKI"/>
+                                                <constraint firstItem="mvG-aw-cUf" firstAttribute="leading" secondItem="wGb-sG-xJG" secondAttribute="trailing" constant="8" id="hbO-MT-arc"/>
+                                                <constraint firstItem="mvG-aw-cUf" firstAttribute="trailing" secondItem="y0f-1z-IVM" secondAttribute="trailingMargin" id="pmq-Rr-lrK"/>
+                                                <constraint firstItem="mvG-aw-cUf" firstAttribute="top" secondItem="y0f-1z-IVM" secondAttribute="topMargin" constant="-1" id="v8v-0S-aZc"/>
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="subviews">
                                                     <exclude reference="wGb-sG-xJG"/>
+                                                    <exclude reference="mvG-aw-cUf"/>
                                                 </mask>
                                                 <mask key="constraints">
+                                                    <exclude reference="hbO-MT-arc"/>
+                                                    <exclude reference="pmq-Rr-lrK"/>
+                                                    <exclude reference="v8v-0S-aZc"/>
                                                     <exclude reference="Bpb-zx-oTj"/>
                                                     <exclude reference="Wcp-Qk-DKI"/>
                                                 </mask>
@@ -677,8 +716,12 @@
                                             <variation key="widthClass=compact">
                                                 <mask key="subviews">
                                                     <include reference="wGb-sG-xJG"/>
+                                                    <include reference="mvG-aw-cUf"/>
                                                 </mask>
                                                 <mask key="constraints">
+                                                    <include reference="hbO-MT-arc"/>
+                                                    <include reference="pmq-Rr-lrK"/>
+                                                    <include reference="v8v-0S-aZc"/>
                                                     <include reference="Bpb-zx-oTj"/>
                                                     <include reference="Wcp-Qk-DKI"/>
                                                 </mask>
@@ -696,27 +739,43 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ttz-wJ-lQ2">
+                                                    <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="YNq-yN-NQC" firstAttribute="leading" secondItem="MlA-Ex-rYm" secondAttribute="leadingMargin" constant="7" id="KSL-ir-L1y"/>
+                                                <constraint firstItem="ttz-wJ-lQ2" firstAttribute="top" secondItem="MlA-Ex-rYm" secondAttribute="topMargin" id="Q4m-hh-wQ0"/>
+                                                <constraint firstItem="ttz-wJ-lQ2" firstAttribute="trailing" secondItem="MlA-Ex-rYm" secondAttribute="trailingMargin" id="R0G-hS-SkF"/>
+                                                <constraint firstItem="ttz-wJ-lQ2" firstAttribute="leading" secondItem="YNq-yN-NQC" secondAttribute="trailing" constant="8" id="tD2-H7-g0n"/>
                                                 <constraint firstItem="YNq-yN-NQC" firstAttribute="top" secondItem="MlA-Ex-rYm" secondAttribute="topMargin" constant="3" id="yKW-Sb-hKl"/>
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="subviews">
                                                     <exclude reference="YNq-yN-NQC"/>
+                                                    <exclude reference="ttz-wJ-lQ2"/>
                                                 </mask>
                                                 <mask key="constraints">
                                                     <exclude reference="KSL-ir-L1y"/>
                                                     <exclude reference="yKW-Sb-hKl"/>
+                                                    <exclude reference="Q4m-hh-wQ0"/>
+                                                    <exclude reference="R0G-hS-SkF"/>
+                                                    <exclude reference="tD2-H7-g0n"/>
                                                 </mask>
                                             </variation>
                                             <variation key="widthClass=compact">
                                                 <mask key="subviews">
                                                     <include reference="YNq-yN-NQC"/>
+                                                    <include reference="ttz-wJ-lQ2"/>
                                                 </mask>
                                                 <mask key="constraints">
                                                     <include reference="KSL-ir-L1y"/>
                                                     <include reference="yKW-Sb-hKl"/>
+                                                    <include reference="Q4m-hh-wQ0"/>
+                                                    <include reference="R0G-hS-SkF"/>
+                                                    <include reference="tD2-H7-g0n"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -732,27 +791,43 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GsX-4q-Ara">
+                                                    <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="GsX-4q-Ara" firstAttribute="leading" secondItem="Fb0-67-ulg" secondAttribute="trailing" constant="8" id="1jz-NC-D39"/>
+                                                <constraint firstItem="GsX-4q-Ara" firstAttribute="trailing" secondItem="wfw-FK-IVx" secondAttribute="trailingMargin" id="RAd-Vg-uqh"/>
                                                 <constraint firstItem="Fb0-67-ulg" firstAttribute="top" secondItem="wfw-FK-IVx" secondAttribute="topMargin" constant="3" id="XJn-w9-YjS"/>
                                                 <constraint firstItem="Fb0-67-ulg" firstAttribute="leading" secondItem="wfw-FK-IVx" secondAttribute="leadingMargin" constant="7" id="gRx-x3-eaV"/>
+                                                <constraint firstItem="GsX-4q-Ara" firstAttribute="top" secondItem="wfw-FK-IVx" secondAttribute="topMargin" constant="-1" id="kUy-ds-fBQ"/>
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="subviews">
                                                     <exclude reference="Fb0-67-ulg"/>
+                                                    <exclude reference="GsX-4q-Ara"/>
                                                 </mask>
                                                 <mask key="constraints">
                                                     <exclude reference="XJn-w9-YjS"/>
                                                     <exclude reference="gRx-x3-eaV"/>
+                                                    <exclude reference="1jz-NC-D39"/>
+                                                    <exclude reference="RAd-Vg-uqh"/>
+                                                    <exclude reference="kUy-ds-fBQ"/>
                                                 </mask>
                                             </variation>
                                             <variation key="widthClass=compact">
                                                 <mask key="subviews">
                                                     <include reference="Fb0-67-ulg"/>
+                                                    <include reference="GsX-4q-Ara"/>
                                                 </mask>
                                                 <mask key="constraints">
                                                     <include reference="XJn-w9-YjS"/>
                                                     <include reference="gRx-x3-eaV"/>
+                                                    <include reference="1jz-NC-D39"/>
+                                                    <include reference="RAd-Vg-uqh"/>
+                                                    <include reference="kUy-ds-fBQ"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -766,7 +841,8 @@
                         </connections>
                     </tableView>
                     <connections>
-                        <outlet property="dateBeginTextField" destination="xd1-qz-8lg" id="nEa-hh-F9p"/>
+                        <outlet property="firstDatePicker" destination="xd1-qz-8lg" id="Can-E9-4h3"/>
+                        <outlet property="secondDatePicker" destination="Z1j-WC-5Lw" id="LJn-hE-eKF"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7pz-yA-wNz" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1120,4 +1196,7 @@
         <image name="list" width="25" height="25"/>
         <image name="monCV" width="25" height="25"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="5Up-of-e9X"/>
+    </inferredMetricsTieBreakers>
 </document>
